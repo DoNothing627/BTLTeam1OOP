@@ -100,7 +100,7 @@ public class A {
     static void OnTheWay()
     {
         Save.add(CurrentNode);
-        System.out.println("I have some suggestion for your next node: ");
+        System.out.println("I have some suggestions for your next node: ");
         
         int Left, Right, left= -1, right= Path.size()- 1;
         while(right- left> 1){
