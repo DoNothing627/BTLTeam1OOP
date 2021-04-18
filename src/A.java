@@ -84,16 +84,24 @@ public class A {
     static boolean Comparable(int middle) {
         paths = Path.get(middle);
         for (int index = 0; index < Save.size(); index++)
+        {
+            if (Save.get(index) < paths.get(index))
+                return false;
             if (Save.get(index) > paths.get(index))
                 return true;
+        }
         return false;
     }
 
     static boolean ReComparable(int middle) {
         paths = Path.get(middle);
         for (int index = 0; index < Save.size(); index++)
+        {
+            if (Save.get(index) > paths.get(index))
+                return false;
             if (Save.get(index) < paths.get(index))
                 return true;
+        }
         return false;
     }
 
@@ -119,7 +127,7 @@ public class A {
         }
         Right= right;
 
-        //System.out.println(Left+ " "+ Right);
+        System.out.println(Left+ " "+ Right);
 
         Suggest.clear();
         int Pre= 0;
@@ -171,9 +179,12 @@ public class A {
             e.printStackTrace();
         }
 
+        trace[1]= -1;
         DFS(1);
         // System.out.println(Path);
         Print();
+
+        System.out.println(Path.size());
 
         System.out.println("You now are in node 1!");
         while (true) {
